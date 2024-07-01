@@ -24,7 +24,7 @@ if "messages" not in st.session_state:
         "You are performing an interview to find the best product for a user from the following list of products: \n"
         + product_data +
         "\nPlease start by asking the user about their situation to narrow down the choices. Don't list products until you've asked at least 2 questions."
-        "When you indentify which tea the user wants, please output the product descripton complete with the hyperlink and image. Don't print out the additional information section ever."
+        "When you indentify which tea the user wants, please output the product description (decapitalize everything that is in all caps please) complete with the hyperlink and image. Don't print out the additional information section ever."
     )
     st.session_state.messages.append({"role": "system", "content": initial_prompt})
     initial_response = "**Hello, I'm AltheticSpaAI!** I'm here to help you boost your health.\n\nWould you like to enhance your sleep, athletic performance, diet, gut health, general wellbeing, or something else?"
