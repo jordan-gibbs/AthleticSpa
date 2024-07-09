@@ -35,13 +35,13 @@ else:
 # Display chat messages from history on app rerun, skipping the system message
 for message in st.session_state.messages:
     if message["role"] != "system":
-        avatar = ":material/spa:" if message["role"] == "assistant" else ":material/mood:"
+        avatar = st.image('athletic_logo.png') if message["role"] == "assistant" else st.image('person_athletic.png')
         with st.chat_message(message["role"], avatar=avatar):
             st.markdown(message["content"])
 
 # If it's the first time around, display the initial assistant message only once
 if not st.session_state.initialized:
-    with st.chat_message("assistant", avatar=":material/spa:"):
+    with st.chat_message("assistant", avatar=st.image('athletic_logo.png')):
         st.markdown(initial_response)
     st.session_state.messages.append({"role": "assistant", "content": initial_response})
     st.session_state.initialized = True
@@ -51,11 +51,11 @@ if prompt := st.chat_input("Ask AthleticSpaAI anything!"):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
     # Display user message in chat message container
-    with st.chat_message("user", avatar=":material/mood:"):
+    with st.chat_message("user", avatar=st.image('person_athletic.png')):
         st.markdown(prompt)
 
     # Display thinking loader with spinner
-    with st.chat_message("assistant", avatar=":material/spa:"):
+    with st.chat_message("assistant", avatar=st.image('athletic_logo.png'):
         message_placeholder = st.empty()
         with st.spinner(''):
             response = client.chat.completions.create(
