@@ -55,7 +55,7 @@ if prompt := st.chat_input("Ask AthleticSpaAI anything!"):
         st.markdown(prompt)
 
     # Display thinking loader with spinner
-    with st.chat_message("assistant", avatar=st.image('athletic_logo.png'):
+    with st.chat_message("assistant", avatar=st.image('athletic_logo.png')):
         message_placeholder = st.empty()
         with st.spinner(''):
             response = client.chat.completions.create(
