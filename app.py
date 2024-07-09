@@ -15,6 +15,14 @@ def load_product_data():
 # Load product data
 product_data = load_product_data()
 
+# Load images as bytes
+def load_image(image_path):
+    with open(image_path, "rb") as image_file:
+        return image_file.read()
+
+assistant_avatar = load_image('athletic_logo.png')
+user_avatar = load_image('person_athletic.png')
+
 # st.title("Tea Product Explorer")
 
 # Initialize chat history and check if it's the first run
@@ -35,13 +43,13 @@ else:
 # Display chat messages from history on app rerun, skipping the system message
 for message in st.session_state.messages:
     if message["role"] != "system":
-        avatar = st.image('athletic_logo.png') if message["role"] == "assistant" else st.image('person_athletic.png')
+        avatar = assistant_avatar if message["role"] == "assistant" else user_avatar
         with st.chat_message(message["role"], avatar=avatar):
             st.markdown(message["content"])
 
 # If it's the first time around, display the initial assistant message only once
 if not st.session_state.initialized:
-    with st.chat_message("assistant", avatar=st.image('athletic_logo.png')):
+    with st.chat_message("assistant", avatar=assistant_avatar):
         st.markdown(initial_response)
     st.session_state.messages.append({"role": "assistant", "content": initial_response})
     st.session_state.initialized = True
@@ -51,11 +59,11 @@ if prompt := st.chat_input("Ask AthleticSpaAI anything!"):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
     # Display user message in chat message container
-    with st.chat_message("user", avatar=st.image('person_athletic.png')):
+    with st.chat_message("user", avatar=user_avatar):
         st.markdown(prompt)
 
     # Display thinking loader with spinner
-    with st.chat_message("assistant", avatar=st.image('athletic_logo.png')):
+    with st.chat_message("assistant", avatar=assistant_avatar):
         message_placeholder = st.empty()
         with st.spinner(''):
             response = client.chat.completions.create(
