@@ -38,8 +38,8 @@ def make_chattext_dark():
     return """
         <style>
         [data-testid="stChatInput"] {
-        color: #ffffff;
-        caret-color: #ffffff;
+        color: rgba(255, 255, 255, 0.8);
+        caret-color: rgba(255, 255, 255, 0.8);
         background-color: rgba(0, 0, 0, 0.8);
         }
         </style>"""
