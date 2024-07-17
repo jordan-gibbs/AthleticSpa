@@ -35,10 +35,14 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 custom_css = """
 <style>
 .stChatInputContainer > div {
-    background-color: rgba(255, 255, 255, 1) !important;
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    color: #ffffff !important;
     border: 1px solid #ccc !important;
     border-radius: 5px !important;
     padding: 10px !important;
+}
+.stChatInputContainer > div input {
+    color: #ffffff !important;
 }
 </style>
 """
