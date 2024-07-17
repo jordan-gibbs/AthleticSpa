@@ -20,6 +20,17 @@ def load_image(image_path):
     with open(image_path, "rb") as image_file:
         return image_file.read()
 
+# Streamlit app setup
+hide_streamlit_style = """
+            <style>
+            #root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 0rem;}
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 assistant_avatar = load_image('athletic_logo.png')
 user_avatar = load_image('person_athletic.png')
 
