@@ -31,25 +31,20 @@ hide_streamlit_style = """
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-# Custom CSS for st.chat_input
-custom_css = """
-<style>
-.stChatInputContainer > div {
-    background-color: rgba(0, 0, 0, 0.8) !important;
-    color: #ffffff !important;
-    border: 1px solid #ccc !important;
-    border-radius: 5px !important;
-    padding: 10px !important;
-}
-.stChatInputContainer > div input {
-    color: #ffffff !important;
-}
-</style>
-"""
-st.markdown(custom_css, unsafe_allow_html=True)
-
 assistant_avatar = load_image('athletic_logo.png')
 user_avatar = load_image('person_athletic.png')
+
+def make_chattext_dark():
+    return """
+        <style>
+        [data-testid="stChatInput"] {
+        color: #ffffff;
+        caret-color: #ffffff;
+        background-color: rgba(0, 0, 0, 0.8);
+        }
+        </style>"""
+
+t.markdown(make_chattext_dark(), unsafe_allow_html=True)
 
 # st.title("Tea Product Explorer")
 
