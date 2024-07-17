@@ -31,6 +31,19 @@ hide_streamlit_style = """
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
+# Custom CSS for st.chat_input
+custom_css = """
+<style>
+.stChatInputContainer > div {
+    background-color: rgba(255, 255, 255, 1) !important;
+    border: 1px solid #ccc !important;
+    border-radius: 5px !important;
+    padding: 10px !important;
+}
+</style>
+"""
+st.markdown(custom_css, unsafe_allow_html=True)
+
 assistant_avatar = load_image('athletic_logo.png')
 user_avatar = load_image('person_athletic.png')
 
