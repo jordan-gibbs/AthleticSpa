@@ -44,7 +44,7 @@ def make_chattext_dark():
         }
         </style>"""
 
-t.markdown(make_chattext_dark(), unsafe_allow_html=True)
+st.markdown(make_chattext_dark(), unsafe_allow_html=True)
 
 # st.title("Tea Product Explorer")
 
