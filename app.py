@@ -22,6 +22,11 @@ def load_image(image_path):
 assistant_avatar = load_image('athletic_logo.png')
 user_avatar = load_image('person_athletic.png')
 
+st.set_page_config(
+    page_title="Rapha",
+    page_icon="🤖",
+)
+
 hide_streamlit_style = """
             <style>
             #root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 0rem;}
