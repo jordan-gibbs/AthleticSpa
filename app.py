@@ -58,7 +58,7 @@ else:
 # Accept user input at the top
 with st.container():
     st.markdown('<div class="chat-input-container">', unsafe_allow_html=True)
-    prompt = st.chat_input("Ask AthleticSpaAI anything!")
+    prompt = st.chat_input("Ask Rapha anything!")
     st.markdown('</div>', unsafe_allow_html=True)
 
 if prompt:
