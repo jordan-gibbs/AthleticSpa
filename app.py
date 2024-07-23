@@ -50,7 +50,7 @@ if "messages" not in st.session_state:
         "When you identify which product the user wants, please output the product description (decapitalize everything that is in all caps please) complete with the hyperlink and image. Don't print out the additional information section ever. Do not ever recommend a product that isn't directly relevant to the user's request. If the product doesn't exist, then just say so and suggest something similar."
     )
     st.session_state.messages.append({"role": "system", "content": initial_prompt})
-    initial_response = "**Hello, I'm AthleticSpaAI!** I'm here to help you boost your health.\n\nWould you like to enhance your sleep, athletic performance, diet, gut health, general well-being, or something else?"
+    initial_response = "**Hello, I'm Rapha!** I'm here to help you boost your health.\n\nWould you like to enhance your sleep, athletic performance, diet, gut health, general well-being, or something else?"
     st.session_state.initialized = False
 else:
     st.session_state.initialized = True
