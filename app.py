@@ -22,6 +22,16 @@ def load_image(image_path):
 assistant_avatar = load_image('athletic_logo.png')
 user_avatar = load_image('person_athletic.png')
 
+hide_streamlit_style = """
+            <style>
+            #root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 0rem;}
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 # Add custom CSS
 st.markdown("""
     <style>
